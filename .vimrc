@@ -67,6 +67,9 @@ set fileformat=unix
 
             Plug 'lervag/vimtex'
 
+            " Vim-Copilot
+            Plug 'github/copilot.vim'
+
         call plug#end()
 "Theme color
 colorscheme catppuccin_mocha
