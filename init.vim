@@ -77,6 +77,9 @@ colorscheme catppuccin_mocha
 set laststatus=2
 set noshowmode
 
+"Discord rich presence config
+let g:presence_main_image = "neovim"
+
 " markdown preview config
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
@@ -202,9 +205,11 @@ nmap <leader>t :NERDTree<cr>
 
     function! CorrerOCompilar()
         let l:file = expand('%')
-        let l:extension = expand('%:e')
+        let l:ext = expand('%:e')
         if l:ext ==# 'py'
             execute '!python3' l:file
+        elseif l:ext ==# 'jl'
+            execute '!julia' l:file
         elseif l:ext ==# 'c'
             execute '!gcc' l:file '-o' expand('%:r') '&&' expand('%:r')
         elseif l:ext ==# 'java'
@@ -215,6 +220,8 @@ nmap <leader>t :NERDTree<cr>
             execute '!g++' l:file '-o' expand('%:r') '&&' expand('%:r')
         elseif l:ext ==# 'bash'
             execute '!bash' l:file
+        elseif l:ext ==# 'html'
+            execute '!firefox' l:file
         else
             echo 'extension no configurada'
         endif
