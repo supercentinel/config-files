@@ -24,6 +24,14 @@ autocmd BufWritePre * %s/\s\+$//e
 " Colum color
 highlight ColorColumn ctermbg=1
 
+"path to python3
+let g:python3_host_prog = '/usr/bin/python3'
+"path to perl
+" disable perl provider by default
+let g:loaded_perl_provider = 0
+"path to ruby
+" disable ruby provider by default
+let g:loaded_ruby_provider = 0
 " Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -61,6 +69,9 @@ call plug#begin('~/.vim/plugged')
 
         " Vim-Copilot
         Plug 'github/copilot.vim'
+
+        "Leetcode Vim
+        Plug 'ianding1/leetcode.vim'
 
         " Vim-emmet
         "Plug 'mattn/emmet-vim'
@@ -186,8 +197,6 @@ let g:presence_main_image = "neovim"
     syntax enable
 
     "viewer method
-    let g:vimtex_general_viewer = 'zathura'
-
 
 " Custom mapings
     nmap <leader><leader>p :MarkdownPreview<cr>
@@ -384,3 +393,7 @@ let g:presence_main_image = "neovim"
     nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
     " Resume latest coc list
     nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+    "Config for leetcode plugin
+    let g:leetcode_browser='firefox'
+    let g:leetcode_solution_filetype='c'
