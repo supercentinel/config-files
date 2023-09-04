@@ -76,6 +76,12 @@ call plug#begin('~/.vim/plugged')
         " Vim-emmet
         "Plug 'mattn/emmet-vim'
 
+        " Commentary
+        Plug 'tpope/vim-commentary'
+
+        " Surround
+        Plug 'tpope/vim-surround'
+
     call plug#end()
 "Theme color
 colorscheme catppuccin_mocha
